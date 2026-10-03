@@ -33,18 +33,12 @@ export default function WelcomeScreen({ onGetStarted, onLogIn }: WelcomeScreenPr
 
         {/* Branding */}
         <div className="flex flex-1 flex-col items-center justify-end pb-8 text-center">
-          <div className="mb-3 flex items-center gap-1.5 animate-fade-in-up opacity-0" style={{ animationDelay: '0.15s' }}>
-            <MapPin className="h-5 w-5 text-sunset-400" strokeWidth={2.5} />
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sunset-300">
-              Lucknow, India
-            </span>
+          <div className="mb-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.15s' }}>
+            <img src="/logo.png" alt="Ghummi Ghummi Logo" className="mx-auto h-48 w-auto drop-shadow-2xl sm:h-64" />
           </div>
 
-          <h1
-            className="font-display text-5xl font-extrabold leading-tight tracking-tight animate-fade-in-up opacity-0 sm:text-6xl"
-            style={{ animationDelay: '0.25s' }}
-          >
-            Ghummi <span className="text-sunset-400">Ghummi</span>
+          <h1 className="sr-only">
+            Ghummi Ghummi
           </h1>
 
           <p

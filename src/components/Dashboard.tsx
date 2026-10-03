@@ -63,9 +63,8 @@ export default function Dashboard() {
       <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md">
         <div className="flex items-center justify-between px-4 py-3 sm:px-5">
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sunset-500 text-white shadow-sm">
-              <MapPin className="h-5 w-5" strokeWidth={2.5} />
-            </div>
+            <img src="/logo.png" alt="Ghummi Ghummi Logo" className="h-10 w-10 object-contain drop-shadow-sm" />
+
             <span className="font-display text-lg font-bold text-gray-900">
               Ghummi <span className="text-sunset-500">Ghummi</span>
             </span>

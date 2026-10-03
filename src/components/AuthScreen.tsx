@@ -18,6 +18,7 @@ function phoneToEmail(phone: string) {
 }
 
 export default function AuthScreen({ mode, onClose, onSuccess }: AuthScreenProps) {
+  const [currentMode, setCurrentMode] = useState<'signup' | 'login'>(mode);
   const [method, setMethod] = useState<AuthMethod>('phone');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ export default function AuthScreen({ mode, onClose, onSuccess }: AuthScreenProps
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const isSignup = mode === 'signup';
+  const isSignup = currentMode === 'signup';
 
   // Mock phone OTP: show the code entry screen instantly (no real SMS sent)
   const handlePhoneSubmit = (e: React.FormEvent) => {
@@ -130,6 +131,8 @@ export default function AuthScreen({ mode, onClose, onSuccess }: AuthScreenProps
             <X className="h-5 w-5" />
           </button>
         </div>
+
+        <img src="/logo.png" alt="Ghummi Ghummi Logo" className="mb-4 h-12 w-12 object-contain" />
 
         <h2 className="font-display text-2xl font-bold text-gray-900">
           {isSignup ? 'Join Ghummi Ghummi' : 'Welcome back'}
@@ -311,8 +314,11 @@ export default function AuthScreen({ mode, onClose, onSuccess }: AuthScreenProps
           </>
         )}
 
-        <p className="mt-6 text-center text-xs text-gray-400">
-          By continuing you agree to our Terms &amp; Privacy Policy.
+        <p className="mt-6 text-center text-sm text-gray-600">
+          {isSignup ? 'Already have an account?' : "Don't have an account?"}{' '}
+          <button onClick={() => setCurrentMode(isSignup ? 'login' : 'signup')} className="font-semibold text-sunset-600 hover:underline">
+            {isSignup ? 'Log in' : 'Sign up'}
+          </button>
         </p>
       </div>
     </div>
