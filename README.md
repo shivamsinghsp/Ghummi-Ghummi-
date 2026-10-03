@@ -1,3 +1,3 @@
 # ghummi-ghummi
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-jt8u6mkk)
+A travel buddy app for safe stays, trusted auto rides, and local exploration in Lucknow.
